@@ -4,15 +4,16 @@
 
 1. Fork할 저장소에서 우측 상단의 Fork 버튼 클릭
 
-   ![image-20220707131112356](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/image-20220707131112356.png)
+![image-20220707131112356](https://user-images.githubusercontent.com/108647801/177930108-6d32312f-d71c-41d7-9b14-2d05b40adbcc.png)
 
 2. 자신의 원격저장소에 저장될 이름을 작성 Create fork
 
-   ![image-20220707131431617 (1)](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/image-20220707131431617 (1).png)
+![image-20220707131431617 (1)](https://user-images.githubusercontent.com/108647801/177930113-c75b2999-199b-4ca1-b0e2-b925a0a95f2e.png)
+
 
 3. 자신의 원격저장소에서 확인
 
-   ![스크린샷 2022-07-08 오후 2.28.41](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/스크린샷 2022-07-08 오후 2.28.41.png)
+ <img width="384" alt="스크린샷 2022-07-08 오후 2 28 41" src="https://user-images.githubusercontent.com/108647801/177930126-b27a7730-120d-4670-8a0f-cb48b9a5591e.png">
 
 #### (Local) Clone & Branch 생성
 
@@ -26,7 +27,7 @@
 
      
 
-     ![image-20220707132309235 (1)](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/image-20220707132309235 (1).png)
+![image-20220707132309235 (1)](https://user-images.githubusercontent.com/108647801/177930155-b3391ef7-eb86-45a0-bbfd-14457c09a4e8.png)
 
 2. branch를 생성하고 이동
 
@@ -58,7 +59,7 @@
 
    - 자동으로 초록 버튼이 생성되기도 하지만 안뜰때는 직접 pull request에 들어가서 만들어준다.
 
-     ![image-20220707134616247](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/image-20220707134616247.png)
+   ![image-20220707134616247](https://user-images.githubusercontent.com/108647801/177930187-82bf1aec-e92b-4d4f-ba02-6b55028aa31b.png)
 
 2. pull request 내용을 작성한 후 create pull request
 
@@ -66,4 +67,4 @@
 
    - Head → base 방향으로 merge 
 
-     ![image-20220707141234516](/Users/yuyeong/Desktop/TIL/git:github/fork.assets/image-20220707141234516.png)
+  ![image-20220707141234516](https://user-images.githubusercontent.com/108647801/177930203-4b3cb23a-506a-4e3c-9e92-a81a356a07a6.png)
