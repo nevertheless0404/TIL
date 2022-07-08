@@ -51,7 +51,7 @@ $ git log --oneline // 커밋 상태 한줄로 확인
 
 ## 라이프 사이클
 
-![이름 없는 노트북-1 2](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-1 2.jpg)
+![이름 없는 노트북-1 2](https://user-images.githubusercontent.com/108647801/177897620-74310a64-68ae-4c24-abf8-f87e98337e56.jpg)
 
 - Untracked : 아무것도 건드리지 않은 상태
 - Unmodified : 수정 안 된 상태
@@ -96,7 +96,7 @@ $ git push '파일명'
 $ git pull '파일명'
 ```
 
-![이름 없는 노트북-2 2](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-2 2.jpg)
+![이름 없는 노트북-2 2](https://user-images.githubusercontent.com/108647801/177897623-03eaedc3-2cf7-44da-9b71-4eec5040a696.jpg)
 
 ## github에서 원격 저장소 만들기
 
@@ -179,7 +179,7 @@ a7afaf1 (HEAD → master) add README # 에서 코드임
 
 > feature 브랜치가 생성된 이후 master 브랜치에 변경 사항이 없는 상황(**master만 변경**)
 
-![이름 없는 노트북-1 3](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-1 3.jpg)
+[이름 없는 노트북-1 3](https://user-images.githubusercontent.com/108647801/177896978-e91fe856-0e5c-4048-baa5-9f44f766bcc5.jpg)
 
 1. feature/home branch 생성 및 이동
 
@@ -240,7 +240,7 @@ Deleted branch feature/home (was b534a34).
 >
 > git이 auto merging을 진행하고, commit 발생
 
-![이름 없는 노트북-1 2](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-1 2-7242361.jpg)
+![이름 없는 노트북-1 2](https://user-images.githubusercontent.com/108647801/177896981-c35bfca2-dcd9-4ae5-a9b6-3b2852532a0d.jpg)
 
 1. feature/about branch 생성 및 이동
 
@@ -319,8 +319,7 @@ Deleted branch feature/about (was 5e1f6de).
 > 해당 파일의 위치에 표준형식에 따라 표시 해준다.
 >
 > 원하는 형태의 코드로 직접 수정을 하고 직접 commit을 발생시켜야한다.
-
-![이름 없는 노트북-1 4](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-1 4.jpg)
+![이름 없는 노트북-1 4](https://user-images.githubusercontent.com/108647801/177896974-6ba7e826-f059-4682-9e2c-29deeb9ef5df.jpg)
 
 1. feature/test branch 생성 및 이동
 
@@ -435,5 +434,4 @@ Unmerged paths:
 ```
 
 ## 전체 동작 과정
-
-![이름 없는 노트북-1](/Users/yuyeong/Desktop/TIL/git:github/git:github.assets/이름 없는 노트북-1.jpg)
+![이름 없는 노트북-1](https://user-images.githubusercontent.com/108647801/177896967-ecd67814-d39e-414c-926a-2e306670df96.jpg)
