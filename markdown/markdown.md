@@ -51,7 +51,7 @@ print('hello')
 - 아래의 이미지는 나오지 않음
   - 절대경로(C드라이브)
 
-![1630569073369](/Users/yuyeong/Desktop/TIL/markdown/markdown.assets/1630569073369.jpeg)
+![1630569073369](https://user-images.githubusercontent.com/108647801/177896908-446b9092-4f80-4c50-b1f8-febb8c9873c3.jpeg)
 
 - 위의 이미지는 나옴
   - 상대경로
