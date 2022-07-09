@@ -102,10 +102,9 @@ $ git pull '파일명'
 
 - New Repository -> 저장소에서 이름/설명/공개 여부 설정 -> github 주소 확인 후
 
-  
-
 ```bash
 $ git remote add origin'주소'(https://github.com/nevertheless0404)
+$ git push -u origin master
 ```
 
 ## 원격저장소 git 활용 명령어(clone)

@@ -68,3 +68,25 @@
    - Head → base 방향으로 merge 
 
   ![image-20220707141234516](https://user-images.githubusercontent.com/108647801/177930203-4b3cb23a-506a-4e3c-9e92-a81a356a07a6.png)
+
+
+
+#### Merge 이후 동기화 및 branch 삭제
+
+- Merge가 완료되면 로컬 코드와 원본의 코드를 병합하고 최신의 상태를 유지하기 위해 동기화 한다.
+- upstream 확인
+
+```bash
+git remote -v
+```
+
+- upstream 추가
+
+```bash
+$ git remote add upstream
+$ git fetch upstrem 
+$ git merge upstream/master
+$ git branch -d example 
+```
+
+- 위 명령어를 통해 동기화하고, 브랜치를 삭제한다.
