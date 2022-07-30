@@ -11,3 +11,14 @@ for i in range(1, B+1):
     for j in range(i):
         arr.append(i)
 print(sum(arr[A-1:B]))
+
+
+# 2.
+# arr = []
+# numbers = 1
+# while len(arr) < B:
+# # number의 크기만큼 수열 리스트에 n을 추가한다.
+#     for i in range(numbers):
+#         arr.append(numbers)
+#         numbers += 1
+# print(arr,len(arr))

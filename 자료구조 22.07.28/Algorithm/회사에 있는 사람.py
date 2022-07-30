@@ -15,5 +15,6 @@ names = []
 for name in log:
     if log[name] == 1:
         names.append(name)
+names.sort(reverse=True)
 for name in names:
     print(name)
