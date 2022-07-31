@@ -1,7 +1,7 @@
 # https://www.acmicpc.net/problem/1065
 
 import sys
-sys.stdin = open("/Users/yuyeong/Desktop/TIL/자료구조 22.07.26/1_한수(1065).txt","r")
+sys.stdin = open("/Users/yuyeong/Desktop/TIL/자료구조 22.07.26/24_한수(1065).txt","r")
 
 num = int(input())
 hansu = 0
