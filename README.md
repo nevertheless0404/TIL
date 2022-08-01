@@ -1,7 +1,6 @@
 # 🔥 KDT 🔥
 
 ## ✏️ Studying
-
 |                        | 👩🏻‍💻Today I Learned | Links                                                        |
 | ---------------------- | ------------------ | ------------------------------------------------------------ |
 | **1주차** *Git/Github* | `220704`           | OT                                                           |
@@ -24,4 +23,5 @@
 |                        | `220727`           | ✏️  [자료구조 - (3) 정리](https://github.com/nevertheless0404/TIL/tree/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%2022.07.27) 💡 [백준, 프로그래머스 실습](https://github.com/nevertheless0404/TIL/tree/master/ALGORITHM/Algorithm/3%EC%9D%BC%EC%B0%A8) |
 |                        | `220728`           | ✏️ [자료구조 - (4) 정리](https://github.com/nevertheless0404/TIL/tree/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%2022.07.28) 💡 [백준 실습](https://github.com/nevertheless0404/TIL/tree/master/ALGORITHM/Algorithm/4%EC%9D%BC%EC%B0%A8) |
 |                        | `220729`           | 🔥 [01-PJT-03](https://github.com/nevertheless0404/01-PJT-03/tree/example/1%ED%9A%8C%EC%B0%A8/%EA%B9%80%EC%9C%A0%EC%98%81) |
+| **5주차**              | `220801`           | ✏️ [자료구조-(5) 정리](https://github.com/nevertheless0404/TIL/tree/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%2022.08.01) 💡 [백준 실습](https://github.com/nevertheless0404/TIL/tree/master/ALGORITHM/Algorithm/5%EC%9D%BC%EC%B0%A8) |
 
