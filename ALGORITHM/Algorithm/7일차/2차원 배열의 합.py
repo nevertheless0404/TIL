@@ -23,3 +23,18 @@ k = int(input())
 for _ in range(k):
     i,j,x,y = map(int, input().split())
     print(dp[x][y] - dp[x][j-1] - dp[i-1][y] + dp[i-1][j-1]) 
+
+# 2. 
+# i -= 1
+# j -= 1
+# x -= 1
+# y -= 1
+# sum_ = 0
+
+# 이중 반복문
+# i -> x
+# for r in range(i, x+1):
+# j -> y
+# for c in range(j, y+1):
+# sum_+= lst[r][c]
+# print(sum_)
