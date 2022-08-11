@@ -20,7 +20,6 @@ def dfs(v):
     visited[v] = True
     for i in graph[v]:
         if not visited[i]:
-            print(result[v])
             result[i] = result[v] + 1
             dfs(i)
 
