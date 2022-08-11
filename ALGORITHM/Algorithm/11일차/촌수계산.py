@@ -5,21 +5,22 @@ sys.stdin = open("/Users/yuyeong/Desktop/알고리즘/01-ALGOR
 
 n = int(input())
 a, b = map(int, input().split())
-m = int(int(input()))
-graph = [[] for _ in range(n+1)]
+m = int(input())
+# _: 값을 사용하지 않겠다는 의미 
+graph = [[] for _ in range(0, n+1)]
 visited = [False] * (n+1)
 result = [0] * (n+1)
 
 for _ in range(m):
-    x, y = map(int, input().split())
+    x, y = list(map(int, input().split()))
     graph[x].append(y)
     graph[y].append(x)
-
 # 자식노트에 도착하는 경우 부모노드가 갖는 촌수에 +1
 def dfs(v):
     visited[v] = True
     for i in graph[v]:
         if not visited[i]:
+            print(result[v])
             result[i] = result[v] + 1
             dfs(i)
 
