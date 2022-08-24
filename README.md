@@ -40,3 +40,4 @@
 |                        | `220819`           | ✏️ [데이터베이스 기초 - (4) 정리](https://github.com/nevertheless0404/TIL/blob/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-04/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-04.md)  💡[DB 수업내용 복습, 실습](https://github.com/nevertheless0404/TIL/tree/master/DB/DB_04) |
 | **8주차**              | `220822`           | ✏️ [데이터베이스 기초 - (5) 정리](https://bit.ly/3R0xRa1)    💡 [DB 수업내용 복습, 실습](https://bit.ly/3pAmCJJ) |
 |                       | `220823`           | ✏️ [데이터베이스 기초 - (6) 정리](https://bit.ly/3QJjo2B)    💡 [DB_ERD 실습](https://bit.ly/3PKqSB5) |
+|                       | `220824`           | ✏️ [데이터베이스 기초 - (7) 정리](https://bit.ly/3AK2fjA)    💡 [DB_ORM 실습](https://bit.ly/3wrh4VT) |
