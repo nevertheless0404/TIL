@@ -42,3 +42,4 @@
 |                       | `220823`           | ✏️ [데이터베이스 활용 - (6) 정리](https://bit.ly/3QJjo2B)    💡 [DB_ERD 실습](https://bit.ly/3PKqSB5) |
 |                       | `220824`           | ✏️ [데이터베이스 활용 - (7) 정리](https://bit.ly/3AK2fjA)    💡 [DB_ORM 실습](https://bit.ly/3wrh4VT) |
 |                       | `220825`           | ✏️ [데이터베이스 활용 - (8) 정리](https://bit.ly/3pLIiTo)    💡 [DB_ORM 실습](https://bit.ly/3KhWVqW) |
+| **9주차**              | `220829`           | ✏️ [WEB - (1) 정리](https://bit.ly/3RmuFWx)    💡 [WEB 태그별 문서 정리](https://bit.ly/3cuB1UU) |
