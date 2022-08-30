@@ -1,0 +1,38 @@
+
+.headline1 {
+  text-align: center;
+  font-size: 12px;
+}
+.headline2 {
+  text-align: center;
+}
+.card {
+  float: left;
+  margin: 1px; 
+}
+.card_image {
+  width: 900px;
+  list-style: none;
+  align-items: center;
+}
+.item {
+  display: block;
+  padding-left: 10px;
+  color: gray
+}
+.str {
+  font-size: 14pt;
+  padding-left: 10px;
+}
+.txt {
+  display: inline-block;
+  color: gray;
+  font-size: 9pt;
+  padding-left: 10px;
+}
+.card1 {
+  border-radius: 20px;
+}
+.image {
+  border-radius: 15px;
+}

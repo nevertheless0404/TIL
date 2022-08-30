@@ -1,0 +1,28 @@
+/* 아래에 CSS를 작성해주세요. */
+.image{
+  width: 300px;
+  border-radius: 5px;
+}
+.str1{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+  color: gray;
+}
+.str2{
+  padding-left: 15px;
+  padding-top: 5px; 
+  margin: 0px;
+  font-size: 15pt;
+}
+.str3{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+  font-size: 20pt;
+}
+.str4{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+}
