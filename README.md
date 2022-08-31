@@ -44,3 +44,4 @@
 |                       | `220825`           | ✏️ [데이터베이스 활용 - (8) 정리](https://bit.ly/3pLIiTo)    💡 [DB_ORM 실습](https://bit.ly/3TohENS) |
 | **9주차**              | `220829`           | ✏️ [WEB - (1) 정리](https://bit.ly/3RmuFWx)    💡 [WEB 태그별 문서 정리](https://bit.ly/3cuB1UU) |
 |                       | `220830`           | ✏️ [WEB - (2) 정리](https://bit.ly/3ea2fQU)    💡 [WEB 실습](https://bit.ly/3RmlRzW) |
+|                       | `220831`           | ✏️ [WEB - (3) 정리](https://bit.ly/3RqLSOC)    💡 [WEB 실습](https://bit.ly/3Q35TJT) |
