@@ -115,6 +115,9 @@
 
 <img width="527" alt="스크린샷 2022-08-31 오후 2 39 26" src="https://user-images.githubusercontent.com/108647801/187637314-fca05ec5-642b-424c-9e8a-a1dc3162ff3c.png">
 
+![01](https://user-images.githubusercontent.com/108647801/187638087-3ce8469a-e305-48a5-aaac-65cda203d381.png)
+
+
 - [출처](https://ostraining.com/blog/webdesign/css-flexbox-3-the-align-items-property/)
 
 ### Flexbox 구성 요소
@@ -155,7 +158,8 @@
 - 모든 아이템을 Cross axis 를 기준으로 정렬
 - Flex-direction: row 좌에서 우 
 
-![images_bochodev_post_21522fb9-35fe-4b7b-afbb-da2d84a346a2_justify-content](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/images_bochodev_post_21522fb9-35fe-4b7b-afbb-da2d84a346a2_justify-content.svg)
+![images_bochodev_post_21522fb9-35fe-4b7b-afbb-da2d84a346a2_justify-content](https://user-images.githubusercontent.com/108647801/187638373-1df352c5-f889-4744-88ad-5ae889452dfc.svg)
+
 
 - [출처](https://velog.io/@bochodev/CSS-%EA%B8%B0%EC%B4%887)
 
@@ -179,7 +183,7 @@
 
 - **아래 그림은 `flex-direction: row` 위에서 아래다**
 
-![images_bochodev_post_9494a49e-ffc0-496d-8571-06f82b5e6c49_align-items](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/images_bochodev_post_9494a49e-ffc0-496d-8571-06f82b5e6c49_align-items.svg)
+![images_bochodev_post_9494a49e-ffc0-496d-8571-06f82b5e6c49_align-items](https://user-images.githubusercontent.com/108647801/187638379-60ac2533-6ef2-4b03-859f-c4365aa43ead.svg)
 
 
 
@@ -188,7 +192,8 @@
 - 개별 아이템을 Cross axis 기준으로 정렬
   - **해당 속성은 컨테이너에 적용하는 것이 아니라 개별 아이템에 적용**
 
-![images_bochodev_post_51ef1f70-8ab1-435e-927e-8c3b4db01e35_align-self](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/images_bochodev_post_51ef1f70-8ab1-435e-927e-8c3b4db01e35_align-self.svg)
+![images_bochodev_post_51ef1f70-8ab1-435e-927e-8c3b4db01e35_align-self](https://user-images.githubusercontent.com/108647801/187638385-5eb07fad-3dea-44af-995c-411c3bd3121f.svg)
+
 
 #### align-items & align-self
 
@@ -214,4 +219,4 @@
 }
 ```
 
-![스크린샷 2022-08-31 오후 4.58.07(2)](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/스크린샷 2022-08-31 오후 4.58.07(2).png)
+![스크린샷 2022-08-31 오후 4 58 07(2)](https://user-images.githubusercontent.com/108647801/187638396-5281f0ed-ee6a-42bf-87e2-a65005988798.png)
