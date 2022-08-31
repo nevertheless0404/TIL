@@ -1,27 +1,60 @@
 body{
+  background-color: white;
   margin: 0;
-}
 
-.navigator{
-  position: sticky;
-  top: 0;
+}
+.menu{
   display: flex;
-  width: 100%;
-  max-width: 1900px;
-  height: 80px;
+  position: sticky;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white
+  padding: 0 30px;
+  top: 0;
+  height: 60px;
+  text-align: center;
+  font-size: 15px;
+  background-color:antiquewhite;
+  border-bottom: 1px solid #ebebeb;
 }
-.navigator div {
-  padding: 10px;
-  font-size: 20px;
-  font-weight: 600;
+.logo{
+  flex: 0;
+  color: blue;
+  margin-right: 10px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+.menu-text{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  letter-spacing: -0.02em;
+  font-family: 'samsungOneKores', Dotum, '돋움', sans-serif;
+  vertical-align:middle;
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+.login{
+  display: flex;
+  flex: 1;
+  margin-left: 10px;
+  text-align: right;
+}
+.msg{
+  display: flex;
+  position: fixed;
   justify-content: center;
-  margin-right: 50px;
+  align-items: center;
+  color: aliceblue;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  bottom: 50px;
+  right: 50px;
+  font-size: 15px;
+  font-weight: 300;
 }
-
 .headline1 {
   text-align: center;
   font-size: 12px;
