@@ -3,7 +3,7 @@
 ### 📌 복습
 
 ````html
-ㅗ<!DOCTYPE html>
+<!DOCTYPE html>
 <html land="ko">
 <head>
   <meta charset="UTF-8">

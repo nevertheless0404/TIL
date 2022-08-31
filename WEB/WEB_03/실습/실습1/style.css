@@ -1,3 +1,26 @@
+body{
+  margin: 0;
+}
+
+.navigator{
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  max-width: 1900px;
+  height: 80px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white
+}
+.navigator div {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: center;
+  margin-right: 50px;
+}
 
 .headline1 {
   text-align: center;
@@ -5,8 +28,8 @@
 }
 .headline2 {
   text-align: center;
-  
 }
+
 .card {
   float: left;
   margin: 1px; 
@@ -40,4 +63,15 @@
 }
 .image {
   border-radius: 15px;
+}
+.msg{
+  padding: 10px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: gray;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }

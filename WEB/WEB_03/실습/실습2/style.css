@@ -1,0 +1,60 @@
+/* 아래에 CSS를 작성해주세요. */
+.navigator{
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  max-width: 1900px;
+  height: 80px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white
+}
+.navigator div {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.image{
+  width: 300px;
+  border-radius: 5px;
+}
+.str1{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+  color: gray;
+}
+.str2{
+  padding-left: 15px;
+  padding-top: 5px; 
+  margin: 0px;
+  font-size: 15pt;
+}
+.str3{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+  font-size: 20pt;
+}
+.str4{
+  padding-left: 15px;
+  padding-top: 5px;
+  margin: 0px;
+}
+.msg{
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: aquamarine;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
