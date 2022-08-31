@@ -113,9 +113,7 @@
   - Flex Container(부모 요소)
   - Flex item (자식요소)
 
-![스크린샷 2022-08-31 오후 2.39.26](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/스크린샷 2022-08-31 오후 2.39.26.png)
-
-![01](/Users/yuyeong/Desktop/TIL/WEB/WEB_03/WEB_03.assets/01.png)
+<img width="527" alt="스크린샷 2022-08-31 오후 2 39 26" src="https://user-images.githubusercontent.com/108647801/187637314-fca05ec5-642b-424c-9e8a-a1dc3162ff3c.png">
 
 - [출처](https://ostraining.com/blog/webdesign/css-flexbox-3-the-align-items-property/)
 
