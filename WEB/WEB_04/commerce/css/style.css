@@ -16,7 +16,7 @@ body {
   top: 0;
   padding: 1rem;
   margin-top: 1rem;
-  background-color: white;
+  background-color: transparent;
 }
 
 .home-list {
@@ -28,6 +28,7 @@ body {
 
 .banner {
   text-decoration: none;
+  color: black;
 }
 
 .banner-link:visited {
