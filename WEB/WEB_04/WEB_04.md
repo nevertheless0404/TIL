@@ -154,3 +154,11 @@ body {
   background-color: aqua;
 }
 ```
+
+
+
+## 정리
+
+![IMG_0111](/Users/yuyeong/Desktop/TIL/WEB/WEB_04/WEB_04.assets/IMG_0111.jpg)
+
+![IMG_0112](/Users/yuyeong/Desktop/TIL/WEB/WEB_04/WEB_04.assets/IMG_0112.jpg)
