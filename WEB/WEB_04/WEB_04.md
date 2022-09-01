@@ -158,7 +158,5 @@ body {
 
 
 ## 정리
-
-![IMG_0111](/Users/yuyeong/Desktop/TIL/WEB/WEB_04/WEB_04.assets/IMG_0111.jpg)
-
-![IMG_0112](/Users/yuyeong/Desktop/TIL/WEB/WEB_04/WEB_04.assets/IMG_0112.jpg)
+![IMG_0111](https://user-images.githubusercontent.com/108647801/187916434-529b3135-afc1-4fca-87e4-57270b9533c8.jpg)
+![IMG_0112](https://user-images.githubusercontent.com/108647801/187916452-1245976f-75f9-479b-b20a-52896aa9aaa7.jpg)
