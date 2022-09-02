@@ -26,9 +26,8 @@ body {
   list-style: none;
 }
 
-.banner {
+.banner-link {
   text-decoration: none;
-  color: black;
 }
 
 .banner-link:visited {
@@ -101,7 +100,7 @@ body {
 .more-info {
   width: 1280px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
 }
 
