@@ -46,4 +46,4 @@
 |                       | `220830`           | ✏️ [WEB - (2) 정리](https://bit.ly/3ea2fQU)    💡 [WEB 실습](https://bit.ly/3RmlRzW) |
 |                       | `220831`           | ✏️ [WEB - (3) 정리](https://bit.ly/3RqLSOC)    💡 [WEB 실습](https://bit.ly/3Q35TJT) |
 |                       | `220901`           | ✏️ [WEB - (4) 정리](https://bit.ly/3KA5T2U)    💡 [WEB 실습](https://bit.ly/3TxRuZ6) |
-|                        | `220812`           |  🔥 [프로젝트](https://github.com/nevertheless0404/TIL/tree/master/WEB/WEB%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)  |
+|                        | `220812`           |  🔥 [WEB 페어프로젝트](https://github.com/nevertheless0404/TIL/tree/master/WEB/WEB%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)  |
