@@ -123,7 +123,7 @@
 - padding : 테두리와 content간의 간격
 - content : 엘리먼트 안에 포함되는 컨텐츠
 
-![스크린샷 2022-09-07 오후 4.06.10](/Users/yuyeong/Desktop/TIL/WEB/WEB_07/WEB_07.assets/스크린샷 2022-09-07 오후 4.06.10.png)
+<img width="571" alt="스크린샷 2022-09-07 오후 4 06 10" src="https://user-images.githubusercontent.com/108647801/188891175-5d9b047f-481f-4df6-9ff1-6739e46a7f3d.png">
 
 ### M/P
 
