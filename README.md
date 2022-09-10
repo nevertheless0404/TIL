@@ -50,5 +50,5 @@
 | **10주차**              | `220905`           | ✏️ [WEB - (5) 정리](https://github.com/nevertheless0404/TIL/blob/master/WEB/WEB_05/WEB_05.md)    |
 |                       | `220906`            | 💡 [WEB 실습](https://github.com/nevertheless0404/TIL/tree/master/WEB/WEB_06/%EC%8B%A4%EC%8A%B5) |
 |                       | `220907`           | ✏️ [WEB - (6) 정리](https://bit.ly/3RF1Btk)    💡 [WEB 실습](https://bit.ly/3KQyEsi) |
-|                       | `220908`            | 💡 [WEB 실습](https://github.com/nevertheless0404/TIL/tree/master/WEB/WEB_08/%EC%8B%A4%EC%8A%B5_02) |
+|                       | `220908`            | 💡 [WEB 실습](https://bit.ly/3QznysW) |
 
