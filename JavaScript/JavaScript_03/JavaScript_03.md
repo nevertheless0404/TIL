@@ -76,11 +76,10 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="btn">버튼</button>
-  <p id="counter">0</p>
+   <input type="text" id="text-input">
   <script>
     // 1. input 선택
-    const textInput = documet.querSelector('#text-input')
+    const textInput = documet.querySelector('#text-input')
     // 2.
     textInput.addEventListener('input', function(event) {
       // input의 value를 받아오고 싶음
@@ -155,7 +154,7 @@
     }
     .active {
       display: flex;
-      transition: display 3s;
+      transition: display 3;
     }
   </style>
 </head>
