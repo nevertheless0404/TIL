@@ -55,5 +55,5 @@
 |                       | `2209014`            | 🔥 [WEB 페어프로젝트](https://bit.ly/3eWcOaF) |
 |                       | `2209015`            | ✏️ [JavaScript 정리](https://bit.ly/3QLfp4B) |
 |                       | `2209016`            | ✏️ [JavaScript 정리](https://bit.ly/3xu9Cd7) |
-
+| **12주차**              | `220919`           | ✏️ [JavaScript 정리](https://bit.ly/3qLNh6T)    💡 [JavaScript 실습](https://bit.ly/3RVZDFk) |
 
