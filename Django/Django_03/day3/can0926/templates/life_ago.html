@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container p-5">
+  <div class="w-75 container shadow-lg p-3 mb-5 bg-body rounded-5">
+    <h1 class="text-center mt-5">당신의 전생은?</h1>
+    <div class="d-flex flex-column align-items-center mt-5">
+      <div class="fs-2  mb-5 ">
+        <form action="/life_ago_show" method="get" class="mt-5 d-flex">
+          <input type="text" name="name_">
+          <input type="submit" class="ms-3 btn btn-outline-success">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
