@@ -1,4 +1,4 @@
-# .Django
+# Django
 
 ## 개발 환경 만들기 
 
