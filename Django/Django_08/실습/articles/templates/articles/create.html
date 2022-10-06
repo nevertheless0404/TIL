@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container">
+  <h5 class="my-3 border-bottom pb-2">댓글 등록</h5>
+  <form method="post" class="post-form my-3">
+    <!-- 오류표시 START -->
+    <!-- views.py에서 진행한 is_valid가 false일때 경고문!-->
+    <!-- {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for field in form %}
+      {% if field.errors %}
+      <strong>{{ field.label }}</strong>
+      {{ field.errors }}
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %} -->
+    <form action="{% url 'articles:create' %}" method="POST">
+      {% csrf_token %}
+      {{ ppap_form.as_table }}
+      <input type="submit" class="m-2 btn btn-outline-success" value="등록">
+      <!-- <label for="title">제목 : </label>
+  <input type="text" name="title" id="title">
+  <label for="content">내용 : </label>
+  <textarea name="content" id="content"></textarea>
+  <input type="submit" value="글쓰기"> -->
+    </form>
+  </form>
+  {% endblock %}
