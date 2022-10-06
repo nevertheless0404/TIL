@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+  <hr>
+  <form action="" class="m-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">영화</th>
+          <th scope="col">영화 제목</th>
+          <th scope="col">러닝 타임</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        {% for i in v %}
+          <tr>
+            <th scope="row">{{i.id}}</th>
+            <td>
+              <a href="{% url 'infos:detail' i.pk%}" class="link-danger">
+                <p class="text-danger">제목 :
+                  {{i.title}}</p>
+              </a>
+            </td>
+            <td>{{i.running_time}}</td>
+          </tr>
+        </tbody>
+        {% endfor%}
+      </table>
+    </form>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="success">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  {% endblock %}
