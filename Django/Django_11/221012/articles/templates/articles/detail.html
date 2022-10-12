@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="m-5 p-3 border border-3 border-secondary rounded">
+    <h3>제목 :
+      {{i.title}}</h3>
+    <h5>내용 :
+      {{i.content}}</h5>
+    <p>만든날짜 :
+      {{i.created_at}}
+      | 수정날짜 :
+      {{i.updated_at}}</p>
+    <a href="{% url 'articles:delete' i.pk %}" type="button" class="btn btn-outline-secondary">삭제</a>
+    <a href="{% url 'articles:update' i.pk %}" type="button" class="btn btn-outline-secondary">수정</a>
+  </div>
+{% endblock %}
