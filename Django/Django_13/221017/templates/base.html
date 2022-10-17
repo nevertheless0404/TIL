@@ -39,7 +39,21 @@
             </li>
           </ul>
         </div>
+        <form class="d-flex" action="{% url 'articles:search' %}">
+          <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+          <button class="btn btn-outline-warning" type="submit">
+            Search
+          </form>
+        </button>
+      </nav>
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      <div class="container my-5">
+        {% block content %}{% endblock %}
       </div>
-    </nav>
-    {% block content %}{% endblock %}
-  </body>
+    </body>

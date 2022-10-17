@@ -1,8 +1,6 @@
-from multiprocessing import context
-from urllib import request
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
-import articles
+from django.db.models import Q
 from articles.forms import ReviewForm
 from .models import Review
 from django.core.paginator import Paginator
@@ -13,7 +11,7 @@ from django.core.paginator import Paginator
 def index(request):
     k = Review.objects.order_by("id")
     page = request.GET.get("page", "1")  # 페이지
-    paginator = Paginator(k, 3)
+    paginator = Paginator(k, 6)
     page_obj = paginator.get_page(page)
     context = {
         "v": k,
@@ -30,8 +28,9 @@ def create(request):
             article = ppap_form.save(commit=False)
             article.user = request.user
             article.save()
+            messages.warning(request, "글 작성이 완료되었습니다.")
             return redirect("/", article.pk)
-        messages.add_message(request, messages.INFO, "정보를 나타냅니다.")
+
     else:
         ppap_form = ReviewForm()
     context = {
@@ -65,6 +64,7 @@ def update(request, pk):
             ppap_form = ReviewForm(request.POST, request.FILES, instance=k)
             if ppap_form.is_valid():
                 ppap_form.save()
+                messages.warning(request, "글이 수정되었습니다.")
                 return redirect("/", k.pk)
         else:
             ppap_form = ReviewForm(instance=k)
@@ -87,3 +87,15 @@ def likes(request, article_pk):
             article.like_users.add(request.user)
         return redirect("articles:index")
     return redirect("accouts:login")
+
+
+def search(request):
+    if request.method == "GET":
+        content_list = Review.objects.all()
+        search = request.GET.get("search", "")
+
+        if search:
+            search_list = content_list.filter(
+                Q(title__icontains=search) | Q(content__icontains=search)
+            )
+            return render(request, "articles/search.html", {"search": search_list})
