@@ -94,11 +94,13 @@ def comments_delete(request, article_pk, comment_pk):
 
 
 def comments_update(request, article_pk, comment_pk):
-    article = Comment.objects.get(pk=article_pk)
-    com_form = CommetForm(instance=article)
+    article = Comment.objects.get(pk=comment_pk)
+    comment_form1 = CommetForm(instance=article)
     if request.method == "POST":
         update_form = CommetForm(request.POST, instance=article)
         if update_form.is_valid():
             update_form.save()
-            return redirect("detail", comment_pk)
-    return render(request, "articles/update.html", {"com_form": com_form})
+            return redirect("articles:detail", article_pk)
+    return render(
+        request, "articles/comments_update.html", {"comment_form1": comment_form1}
+    )

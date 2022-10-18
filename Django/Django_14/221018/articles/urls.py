@@ -15,7 +15,7 @@ urlpatterns = [
         name="comments_delete",
     ),
     path(
-        "<int:article_pk>/comments/<int:comment_pk>/update",
+        "comments_update/<int:article_pk>/<int:comment_pk>/",
         views.comments_update,
         name="comments_update",
     ),

@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    k = Review.objects.order_by("id")
+    k = Review.objects.all().order_by("id")
     page = request.GET.get("page", "1")  # 페이지
     paginator = Paginator(k, 6)
     page_obj = paginator.get_page(page)
