@@ -4,6 +4,7 @@
   <div class="m-5 p-3 border border-3 border-secondary rounded">
     <h1>{{ user1.username }}의 페이지</h1>
     <h5>{{ user1.email }}</h5>
+    <a href="?search=true&writer={{user1.username}}">내가 쓴 글</a>
 
     <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
     <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>

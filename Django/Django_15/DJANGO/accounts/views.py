@@ -11,13 +11,8 @@ from django.contrib.auth import update_session_auth_hash
 # Create your views here.
 def home(request):
     users = User.objects.all()
-    search = request.GET.get("search")
-    if search == "true":
-        author = request.GET.get("writer")
-        blogs = User.objects.filter(writer=author)
     context = {
         "users": users,
-        "blogs": blogs,
     }
     return render(request, "accounts/home.html", context)
 

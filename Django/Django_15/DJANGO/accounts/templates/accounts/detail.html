@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="m-2 p-2 border border-3 border-secondary rounded">
+    <h1>{{ user1.username }}의 페이지</h1>
+    <h5>{{ user1.email }}</h5>
+    <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
+    <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
+  </div>
+  <div class="m-2 p-2 border border-3 border-secondary rounded">
+    <h4>작성한 글</h4>
+    <p class="text-muted">{{ user1.review_set.count }}개를 작성하였습니다.</p>
+    {% for review in user1.review_set.all %}
+      <p>
+        {{ forloop.counter }}
+        <a href="{% url 'articles:detail' review.pk %}">{{ review.title }}</a>
+      </p>
+    {% endfor %}
+    <h4>작성한 댓글</h4>
+    <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다.</p>
+    {% for comment in user.comment_set.all %}
+      <p>
+        {{ forloop.counter }}
+        <a href="{% url 'articles:detail' comment.article_id %}">{{ comment.content }}</a>
+      </p>
+    {% endfor %}
+  </div>
+{% endblock content %}
