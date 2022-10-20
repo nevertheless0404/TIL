@@ -23,42 +23,55 @@
             {% endif %}
           </p>
           <p>{{ i.content }}</p>
-          <form action="{% url 'articles:delete' i.pk %}" method="POST" class="form">
-            {% csrf_token %}
-            <div class="d-block d-lg-none">
+          <div class="d-block d-lg-none">
+            {% if request.user == i.user %}
               <a href="{% url 'articles:update' i.pk %}" class="btn btn-outline-secondary form-control mb-3">수정</a>
-              <input class="btn btn-outline-danger form-control mb-3" type="submit" value="삭제">
-              <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary form-control mb-3">뒤로</a>
-            </div>
-            <div class="d-none d-lg-block">
-              <div class="d-flex justify-content-end">
+              <form action="{% url 'articles:delete' i.pk %}" method="POST" class="form">
+                {% csrf_token %}
+                <input class="btn btn-outline-danger form-control mb-3" type="submit" value="삭제"></form>
+            {% else %}
+              <a href="" class="btn btn-outline-secondary form-control disabled mb-3">수정</a>
+              <a href="" class="btn btn-outline-danger form-control disabled mb-3">삭제</a>
+            {% endif %}
+            <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary form-control mb-3">뒤로</a>
+          </div>
+          <div class="d-none d-lg-block">
+            <div class="d-flex justify-content-end">
+              {% if request.user == i.user %}
                 <a href="{% url 'articles:update' i.pk %}" class="btn btn-outline-secondary me-1">수정</a>
-                <input class="btn btn-outline-danger me-1" type="submit" value="삭제">
-                <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
-              </div>
+                <form action="{% url 'articles:delete' i.pk %}" method="POST" class="form">
+                  {% csrf_token %}
+                  <input class="btn btn-outline-danger me-1" type="submit" value="삭제"></form>
+              {% else %}
+                <a href="" class="btn btn-outline-secondary disabled me-1">수정</a>
+                <a href="" class="btn btn-outline-danger disabled me-1">삭제</a>
+              {% endif %}
+              <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
             </div>
-          </form>
-        </div>
-        <div class="bg-gray-100 p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
-          {% if comments %}
-            <p>
-              <b>{{ comments|length }}개의 댓글이 있습니다.</b>
+          </div>
+        </form>
+      </div>
+      <div class="bg-gray-100 p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
+        {% if comments %}
+          <p>
+            <b>{{ comments|length }}개의 댓글이 있습니다.</b>
+          </p>
+          <hr>
+        {% endif %}
+        {% for comment in comments %}
+          <div class="comment_display_{{ comment.pk }} d-block">
+            <p class="mb-1">{{ comment.content }}</p>
+            <p class="text-end">{{ comment.user.username }}</p>
+            <p class="fw-light mb-1 text-end" style="font-size: 0.7rem;">
+              {{ comment.created_at|date:'Y-m-d a h:i' }}
+              작성 |
+              {{ comment.updated_at|date:'Y-m-d a h:i' }}
+              수정
             </p>
-            <hr>
-          {% endif %}
-          {% for comment in comments %}
-            <div class="comment_display_{{ comment.pk }} d-block">
-              <p class="mb-1">{{ comment.content }}</p>
-              <p class="text-end">{{ comment.user.username }}</p>
-              <p class="fw-light mb-1 text-end" style="font-size: 0.7rem;">
-                {{ comment.created_at|date:'Y-m-d a h:i' }}
-                작성 |
-                {{ comment.updated_at|date:'Y-m-d a h:i' }}
-                수정
-              </p>
-              <div class="d-flex justify-content-end">
-                {% if request.user == comment.user %}
-                  <button class="btn btn-sm btn-outline-secondary me-1 update_btn_{{ comment.pk }}">수정</button>
+            <div class="d-flex justify-content-end">
+              {% if request.user == comment.user %}
+                <div class="mb-3">
+                  <button onclick="udate_c()" class="btn btn-sm btn-outline-secondary me-1 update_btn_{{ comment.pk }}">수정</button>
                   <form action="{% url 'articles:comment_delete' i.pk comment.pk %}" method="POST" class="form">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-outline-danger" type="submit">삭제</button>
@@ -67,100 +80,48 @@
               </div>
             </div>
             {% if request.user == comment.user %}
-              <div class="comment_update{{ comment.pk }} d-none">
+              <div name="comment_u" id="comment_u">
                 <form action="{% url 'articles:comment_update' i.pk comment.pk %}" method="POST" class="form">
                   {% csrf_token %}
-                  <div class="mb-3">
-                    <label for="updated_comment" class="form-label">수정하기</label>
-                    <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required="required">
-                  </div>
-                  <div class="d-flex justify-content-end">
-                    <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
-                    <button class="btn btn-sm btn-secondary cancel_btn_{{ comment.pk }}" type="button">취소</button>
-                  </div>
-                </form>
-              </div>
-            {% endif %}
-            <hr>
-            {% empty %}
-            <p>
-              <b>
-                0개의 댓글이 있습니다.</b>
-            </p>
-            <hr>
-          {% endfor %}
-          {% if request.user.is_authenticated %}
-            <form action="{% url 'articles:comment_create' i.pk %}" method="POST">
-              {% csrf_token %}
-              {% bootstrap_form comment_form %}
-              <div class="d-flex justify-content-end">
-                <input class="btn btn-sm btn-primary" type="submit" value="작성">
-              </div>
-            </form>
-          {% endif %}
-        </div>
-      </div>
+                  <label for="updated_comment" class="form-label">수정하기</label>
+                  <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required="required">
+                </div>
+                <div class="d-flex justify-content-end">
+                  <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
+                  <button class="btn btn-sm btn-secondary cancel_btn_{{ comment.pk }}" type="button">취소</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        {% endif %}
+        <hr>
+        {% empty %}
+        <p>
+          <b>
+            0개의 댓글이 있습니다.</b>
+        </p>
+        <hr>
+      {% endfor %}
+      {% if request.user.is_authenticated %}
+        <form action="{% url 'articles:comment_create' i.pk %}" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form comment_form %}
+          <div class="d-flex justify-content-end">
+            <input class="btn btn-sm btn-primary" type="submit" value="작성"></div>
+        </form>
+      {% endif %}
     </div>
   </div>
-{% endblock content %}
-(% for comment in comments %)
-{% block js %}
-  <script>
-    const update_btn_ {
-      {
-        comment.pk
-      }
-    } = document.querySelector('#update-btn-{{ comment.pk }}')
-    const cancel_btn_ {
-      {
-        comment.pk
-      }
-    } = document.querySelector('#cancel-btn-{{ comment.pk }}')
+</div>
 
-    update_btn_ {
-      {
-        comment.pk
-      }
-    }.addEventListener('click', function () {
-      document
-        .querySelector('#display-{{ comment.pk }}')
-        .classList
-        .toggle('d-block')
-      document
-        .querySelector('#display-{{ comment.pk }}')
-        .classList
-        .toggle('d-none')
-      document
-        .querySelector('#update-{{ comment.pk }}')
-        .classList
-        .toggle('d-block')
-      document
-        .querySelector('#update-{{ comment.pk }}')
-        .classList
-        .toggle('d-none')
-    })
-    cancel_btn_ {
-      {
-        comment.pk
-      }
-    }.addEventListener('click', function () {
-      document
-        .querySelector('#display-{{ comment.pk }}')
-        .classList
-        .toggle('d-block')
-      document
-        .querySelector('#display-{{ comment.pk }}')
-        .classList
-        .toggle('d-none')
-      document
-        .querySelector('#update-{{ comment.pk }}')
-        .classList
-        .toggle('d-block')
-      document
-        .querySelector('#update-{{ comment.pk }}')
-        .classList
-        .toggle('d-none')
-    })
-  </script>
-{% endblock js %}
-(% endfor %)
+</div>
+<script>
+function udate_c() {
+  var con = Document.getElementByld("comment_u");
+  con.style.display = (con.style.display != 'none')
+    ? "none"
+    : "block";
+}
+</script>
+{% endblock content %}

@@ -2,10 +2,10 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from articles.forms import ReviewForm, CommentForm
-from .models import Review
+from .models import Review, Comment
 from django.core.paginator import Paginator
 
-from xml.etree.ElementTree import Comment
+# from xml.etree.ElementTree import Comment
 
 # Create your views here.
 
@@ -112,31 +112,48 @@ def search(request):
 
 def comment_create(request, article_pk):
     article = Review.objects.get(pk=article_pk)
-    comment_form = CommentForm(request.POST)
-    if comment_form.is_valid():
-        comment = comment_form.save(commit=False)
-        comment.article = article
-        comment.user = request.user
-        comment.save()
-        messages.success(request, "댓글 추가 완료")
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.article = article
+            comment.user = request.user
+            comment.save()
+            messages.success(request, "댓글 추가 완료")
+    else:
+        messages.warning(request, "잘못된 접근입니다.")
     return redirect("articles:detail", article.pk)
 
 
 def comment_update(request, article_pk, comment_pk):
     article = Review.objects.get(pk=article_pk)
     comment = Comment.objects.get(pk=comment_pk)
-    updated_comment = request.POST.get("updated_comment")
-    if 0 < len(updated_comment) <= 80:
-        comment.content = updated_comment
-        comment.article = article
-        comment.save()
-        messages.success(request, "댓글 수정 완료")
+
+    if request.user != comment.user:
+        messages.warning(request, "권한이 없습니다.")
+        return redirect("articles:detail", article.pk)
+
+    if request.method == "POST":
+        updated_comment = request.POST.get("updated_comment")
+        if 0 < len(updated_comment) <= 80:
+            comment.content = updated_comment
+            comment.article = article
+            comment.save()
+            messages.success(request, "댓글 수정 완료")
+    else:
+        messages.warning(request, "잘못된 접근입니다.")
     return redirect("articles:detail", article.pk)
 
 
 def comment_delete(request, article_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.user != comment.user:
+        messages.warning(request, "권한이 없습니다.")
+        return redirect("articles:detail", article_pk)
     if request.method == "POST":
-        comment = Comment.objects.get(pk=comment_pk)
         comment.delete()
         messages.warning(request, "댓글 삭제 완료")
+    else:
+        messages.warning(request, "잘못된 접근입니다.")
     return redirect("articles:detail", article_pk)

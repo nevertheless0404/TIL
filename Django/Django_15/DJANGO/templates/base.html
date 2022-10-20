@@ -40,10 +40,24 @@
         </div>
         <a href="{% url 'articles:create' %}" type="button" class="btn btn-outline-secondary">작성</a>
       </div>
+      <form class="d-flex" action="{% url 'articles:search' %}">
+        <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+        <button class="btn btn-outline-warning" type="submit">
+          Search
+        </form>
+      </button>
     </nav>
-    {% block content %}{% endblock %}
-    {% bootstrap_javascript %}
-    {% block js %}{% endblock js %}
-  </body>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    <div class="container my-5">
+      {% block content %}{% endblock %}
+      {% bootstrap_javascript %}
+      {% block js %}{% endblock js %}
+    </body>
 
-</html>
+  </html>
