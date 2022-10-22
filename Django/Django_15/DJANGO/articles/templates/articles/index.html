@@ -6,7 +6,7 @@
   <div class="row m-2">
     {% for i in question_list %}
       <div class="col-4 mb-2">
-        <div class="card" style="width: 18rem border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
+        <div class="card" style="width: 18rem border-radius 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
           {% if i.thumbnail %}
             <img src="{{ i.thumbnail.url }}" class="card-img-top" alt="" width="400" height="300">
           {% endif %}

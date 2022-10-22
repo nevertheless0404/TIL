@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 {% block content %}
+  <!-- 게시글 -->
   <div class="p-4">
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-6">
+        <!-- 게시글 head-->
         <div class="bg-light p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
           <h1 class="mb-3 fw-bolder">{{ i.title }}</h1>
           <span>
@@ -16,6 +18,7 @@
             수정
           </p>
         </div>
+        <!-- 게시글 body-->
         <div class="bg-white p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
           <p>
             {% if i.image %}
@@ -49,79 +52,87 @@
               <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
             </div>
           </div>
-        </form>
-      </div>
-      <div class="bg-gray-100 p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
-        {% if comments %}
-          <p>
-            <b>{{ comments|length }}개의 댓글이 있습니다.</b>
-          </p>
-          <hr>
-        {% endif %}
-        {% for comment in comments %}
-          <div class="comment_display_{{ comment.pk }} d-block">
-            <p class="mb-1">{{ comment.content }}</p>
-            <p class="text-end">{{ comment.user.username }}</p>
-            <p class="fw-light mb-1 text-end" style="font-size: 0.7rem;">
-              {{ comment.created_at|date:'Y-m-d a h:i' }}
-              작성 |
-              {{ comment.updated_at|date:'Y-m-d a h:i' }}
-              수정
+        </div>
+        <!-- 댓글 -->
+        <div class="bg-gray-100 p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
+          {% if comments %}
+            <p>
+              <b>{{ comments|length }}개의 댓글이 있습니다.</b>
             </p>
-            <div class="d-flex justify-content-end">
-              {% if request.user == comment.user %}
-                <div class="mb-3">
-                  <button onclick="udate_c()" class="btn btn-sm btn-outline-secondary me-1 update_btn_{{ comment.pk }}">수정</button>
-                  <form action="{% url 'articles:comment_delete' i.pk comment.pk %}" method="POST" class="form">
-                    {% csrf_token %}
-                    <button class="btn btn-sm btn-outline-danger" type="submit">삭제</button>
-                  </form>
+            <hr>
+          {% endif %}
+          {% for comment in comments %}
+            <div class="comment_display_{{ comment.pk }} d-block">
+              <p class="mb-1">{{ comment.content }}</p>
+              <p class="text-end">{{ comment.user.username }}</p>
+              <p class="fw-light mb-1 text-end" style="font-size: 0.7rem;">
+                {{ comment.created_at|date:'Y-m-d a h:i' }}
+                작성 |
+                {{ comment.updated_at|date:'Y-m-d a h:i' }}
+                수정
+              </p>
+              <div class="d-flex justify-content-end">
+                {% if request.user == comment.user %}
+                  <div class="my-3">
+                    <button id='com_update' onclick="com_update" class="btn btn-sm btn-outline-secondary my-2">수정</button>
+                    <form action="{% url 'articles:comment_delete' i.pk comment.pk %}" method="POST" class="form">
+                      {% csrf_token %}
+                      <button class="btn btn-sm btn-outline-danger" type="submit">삭제</button>
+                    </form>
+                  </div>
                 {% endif %}
               </div>
-            </div>
-            {% if request.user == comment.user %}
-              <div name="comment_u" id="comment_u">
-                <form action="{% url 'articles:comment_update' i.pk comment.pk %}" method="POST" class="form">
-                  {% csrf_token %}
-                  <label for="updated_comment" class="form-label">수정하기</label>
-                  <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required="required">
-                </div>
-                <div class="d-flex justify-content-end">
-                  <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
-                  <button class="btn btn-sm btn-secondary cancel_btn_{{ comment.pk }}" type="button">취소</button>
-                </div>
+              {% if request.user == comment.user %}
+                {% comment %} <div id="com_update" style='display:none;'> {% endcomment %}
+                  <form action="{% url 'articles:comment_update' i.pk comment.pk %}" method="POST" class="form">
+                    {% csrf_token %}
+                    <label for="updated_comment" class="form-label">수정하기</label>
+                    <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required="required">
+
+                  </div>
+                  <div class="d-flex justify-content-end my-2">
+                    <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
+                    <button class="btn btn-sm btn-secondary cancel_btn_{{ comment.pk }}" type="button">취소</button>
+                  </div>
+                {% endif %}
               </form>
             </div>
-          </div>
 
-        {% endif %}
-        <hr>
-        {% empty %}
-        <p>
-          <b>
-            0개의 댓글이 있습니다.</b>
-        </p>
-        <hr>
-      {% endfor %}
-      {% if request.user.is_authenticated %}
-        <form action="{% url 'articles:comment_create' i.pk %}" method="POST">
-          {% csrf_token %}
-          {% bootstrap_form comment_form %}
-          <div class="d-flex justify-content-end">
-            <input class="btn btn-sm btn-primary" type="submit" value="작성"></div>
-        </form>
-      {% endif %}
+            <hr>
+            {% empty %}
+            <p>
+              <b>
+                0개의 댓글이 있습니다.</b>
+            </p>
+            <hr>
+          {% endfor %}
+          {% if request.user.is_authenticated %}
+            <form action="{% url 'articles:comment_create' i.pk %}" method="POST">
+              {% csrf_token %}
+              {% bootstrap_form comment_form %}
+              <div class="d-flex justify-content-end">
+                <input class="btn btn-sm btn-primary" type="submit" value="작성"></div>
+            </form>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 </div>
 <script>
-function udate_c() {
-  var con = Document.getElementByld("comment_u");
-  con.style.display = (con.style.display != 'none')
-    ? "none"
-    : "block";
-}
+  const com_update = document.getElementById(com_update);
+  com_update.addEventListener('click',(e) => {
+    com_update.
+  })
 </script>
+{% comment %} <style>
+  .noneblock {
+    display: none;
+  }
+
+  .onblock {
+    display: block;
+  }
+</style> {% endcomment %}
 {% endblock content %}
