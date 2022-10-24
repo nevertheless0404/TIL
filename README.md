@@ -56,4 +56,7 @@
 |                       | `2209015`            | ✏️ [JavaScript 정리](https://bit.ly/3QLfp4B) |
 |                       | `2209016`            | ✏️ [JavaScript 정리](https://bit.ly/3xu9Cd7) |
 | **12주차**              | `220919`           | ✏️ [JavaScript 정리](https://bit.ly/3qLNh6T)    💡 [JavaScript 실습](https://bit.ly/3RVZDFk) |
+|              | `220920`           | ✏️ [JavaScript 정리](https://bit.ly/3SA1yz0)    💡 [JavaScript 실습](https://bit.ly/3Fco9yM) |
+|              | `220921`           | ✏️ [Django 정리](https://bit.ly/3DA5rQt) 
+|              | `220922`           |  💡 [Django 실습](https://bit.ly/3gvMxkt)   
 
