@@ -7,6 +7,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -93,17 +94,14 @@ def change_password(request):
     return render(request, "accounts/change_password.html", context)
 
 
-def follow(request, pk):
-    User = get_user_model()
-    # 팔로우 당하는 사람
-    user = get_object_or_404(User, pk=pk)
-    if user != request.user:
-        # 팔로우를 요청한 사람 => request.user
-        # 팔로우가 되어 있다면,
-        if user.followers.filter(pk=request.user.pk).exists():
-            # 삭제
-            user.followers.remove(request.user)
-        else:
-            # 추가
-            user.followers.add(request.user)
-    return redirect("accounts:detail", user.pk)
+def follow(request, user_pk):
+    if request.user.is_authenticated:
+        person = get_object_or_404(get_user_model(), pk=user_pk)
+        if person != request.user:
+            # if request.user.followings.filter(pk=user_pk).exists():
+            if person.followers.filter(pk=request.user.pk).exists():
+                person.followers.remove(request.user)
+            else:
+                person.followers.add(request.user)
+        return redirect('accounts:profile', person.username)
+    return redirect('accounts:login')
