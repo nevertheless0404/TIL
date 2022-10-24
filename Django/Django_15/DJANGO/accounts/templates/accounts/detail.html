@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  {% if request.user != user %}
+    <hr>
+    {% with user_followers = user.followers.all %}
+    {% if request.user in user_followers %}
+      <a href="{% url 'accounts:follow' user.pk %}">팔로우 취소</a>
+    {% else %}
+      <a href="{% url 'accounts:follow' user.pk %}">팔로우</a>
+    {% endif %}
+    {% endwith %}
+  {% endif %}
   <div class="m-2 p-2 border border-3 border-secondary rounded">
     <h1>{{ user1.username }}의 페이지</h1>
     <h5>{{ user1.email }}</h5>
     <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
     <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
+    <div class="m-2 text-end">
+      {% if request.user == user %}
+        <form action="{% url 'accounts:delete' %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-sm btn-secondary">회원 탈퇴</button>
+        </form>
+      {% endif %}
+    </div>
   </div>
   <div class="m-2 p-2 border border-3 border-secondary rounded">
     <h4>작성한 글</h4>
@@ -23,6 +41,12 @@
         {{ forloop.counter }}
         <a href="{% url 'articles:detail' comment.article_id %}">{{ comment.content }}</a>
       </p>
+    {% endfor %}
+    <h3>좋아요한 글 목록</h3>
+    {% for article in user.like_articles.all %}
+      <a href="{% url 'articles:detail' article.pk %}">
+        <p>{{ article.title }}</p>
+      </a>
     {% endfor %}
   </div>
 {% endblock content %}

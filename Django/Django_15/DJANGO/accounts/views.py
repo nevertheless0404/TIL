@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import is_valid_path
 from .models import User
 from .forms import UsersForm, kkUserChangeForm
@@ -91,3 +91,19 @@ def change_password(request):
         "form": form,
     }
     return render(request, "accounts/change_password.html", context)
+
+
+def follow(request, pk):
+    User = get_user_model()
+    # 팔로우 당하는 사람
+    user = get_object_or_404(User, pk=pk)
+    if user != request.user:
+        # 팔로우를 요청한 사람 => request.user
+        # 팔로우가 되어 있다면,
+        if user.followers.filter(pk=request.user.pk).exists():
+            # 삭제
+            user.followers.remove(request.user)
+        else:
+            # 추가
+            user.followers.add(request.user)
+    return redirect("accounts:detail", user.pk)

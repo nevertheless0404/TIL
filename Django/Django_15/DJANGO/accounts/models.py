@@ -1,4 +1,4 @@
-import imp
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -6,4 +6,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    followers = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="followings"
+    )
