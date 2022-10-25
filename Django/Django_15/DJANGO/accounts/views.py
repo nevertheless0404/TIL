@@ -1,5 +1,5 @@
+from django.contrib import messages
 from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import is_valid_path
 from .models import User
 from .forms import UsersForm, kkUserChangeForm
 from django.contrib.auth import get_user_model
@@ -7,7 +7,6 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -94,14 +93,16 @@ def change_password(request):
     return render(request, "accounts/change_password.html", context)
 
 
-def follow(request, user_pk):
+def follow(request, pk):
     if request.user.is_authenticated:
-        person = get_object_or_404(get_user_model(), pk=user_pk)
-        if person != request.user:
+        person = get_object_or_404(get_user_model(), pk=pk)
+        if request.user == person:
+            messages.warning(request, "스스로 팔로우를 할 수 없습니다.")
+            return redirect("accounts:detail", pk)
             # if request.user.followings.filter(pk=user_pk).exists():
-            if person.followers.filter(pk=request.user.pk).exists():
-                person.followers.remove(request.user)
-            else:
-                person.followers.add(request.user)
-        return redirect('accounts:profile', person.username)
-    return redirect('accounts:login')
+        if person.followers.filter(pk=request.user.pk).exists():
+            person.followers.remove(request.user)
+        else:
+            person.followers.add(request.user)
+
+    return redirect("accounts:login")

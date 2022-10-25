@@ -1,45 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="m-2 p-2 border border-3 border-secondary rounded">
-    <h1>{{ user1.username }}의 페이지</h1>
-    <h5>{{ user1.email }}</h5>
-    <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
-    <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
-    <div class="m-2 text-end">
-      {% if request.user == user %}
-        <form action="{% url 'accounts:delete' %}" method="POST">
-          {% csrf_token %}
-          <button class="btn btn-sm btn-secondary">회원 탈퇴</button>
-        </form>
-      {% endif %}
-    </div>
-    <div>
-      {% if user != user1 %}
-        <div>
-          <form action="{% url 'accounts:follow' user1.pk%}" method='POST'>
-            {% csrf_token %}
-            {% if user in user1.followers.all %}
-              <input type="submit" class="btn btn-outline-secondary" value='Unfollow'>
-            {% else %}
-              <input type="submit" class="btn btn-outline-secondary" value='Follow'>
-            {% endif %}
-          </form>
-        </div>
-      {% endif %}
+    <div class="d-flex">
       <div>
+        <h1>{{ user1.username }}의 페이지</h1>
+      </div>
+      <div class="m-2">
+        {% if user != uesr1 %}
+          <div>
+            <form action="{% url 'accounts:follow' user1.pk%}" method='POST'>
+              {% csrf_token %}
+              {% if user in user1.followers.all %}
+                <input type="submit" class="btn btn-outline-secondary" value='Unfollow'>
+              {% else %}
+                <input type="submit" class="btn btn-outline-secondary" value='Follow'>
+              {% endif %}
+            </form>
+          </div>
+        {% endif %}
+      </div>
+      <div class="d-flex m-3">
         팔로잉 :
         {{ user1.followings.all|length }}
         / 팔로워 :
         {{ user1.followers.all|length }}
       </div>
     </div>
+    <div class="d-flex">
+      <div>
+        <h5>{{ user1.email }}</h5>
+        <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
+        <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
+      </div>
+    </div>
     <div>
-      <p>
+      <p class="m-2">
         Following :
         {% for following in user1.followers.all %}
           {{ following }}
         {% endfor %}
       </p>
+    </div>
+    <div class="text-end">
+      {% if request.user == user %}
+        <form action="{% url 'accounts:delete' %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">회원 탈퇴</button>
+        </form>
+      {% endif %}
     </div>
   </div>
   <div class="m-2 p-2 border border-3 border-secondary rounded">
