@@ -52,22 +52,13 @@
               <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
             </div>
           </div>
-          <form action="{% url 'articles:likes' i.pk %}" method='POST'>
-            {% csrf_token %}
-            {% if request.user in i.like_users.all %}
-              <button class="btn btn-link text-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-suit-heart-fill" viewbox="0 0 16 16">
-                  <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-                </svg>
-              </button>
-            {% else %}
-              <button class="btn btn-link text-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-suit-heart" viewbox="0 0 16 16">
-                  <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
-                </svg>
-              </button>
-            </form>
+          <!-- 좋아요 -->
+          {% if request.user in i.like_users.all %}
+            <button><i id="like-btn" data-article-id="{{ i.pk }}" class="bi bi-heart-fill"></i></button>
+          {% else %}
+            <button><i id="like-btn" data-article-id="{{ i.pk }}" class="bi bi-heart"></i></button>
           {% endif %}
+          <span id="like-count">{{ i.like_users.count }}</span>
         </div>
         <!-- 댓글 -->
         <div class="bg-gray-100 p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
@@ -78,7 +69,7 @@
             <hr>
           {% endif %}
           {% for comment in comments %}
-            <div class="comment_display_{{ comment.pk }} d-block">
+            <div id="comment-form" data-article-id="{{ comment.pk }}">
               <p class="mb-1">{{ comment.content }}</p>
               <p class="text-end">{{ comment.user.username }}</p>
               <p class="fw-light mb-1 text-end" style="font-size: 0.7rem;">
@@ -136,11 +127,49 @@
   </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  // (1) 좋아요 버튼
+  const likeBtn = document.querySelector('#like-btn')
+  // (2) 좋아요 버튼을 클릭하면, 함수 실행
+  likeBtn.addEventListener('click', function (event) {
+    // 서버로 비동기 요청을 하고 싶음
+    console.log(event.target.dataset)
+    axios({method: 'get', url: `/${event.target.dataset.articleId}/likes/`}).then(response => {
+      console.log(response)
+      console.log(response.data)
+      // event.target.classList.toggle('bi-heart')
+      // event.target.classList.toggle('bi-heart-fill')
+      if (response.data.isLiked === true) {
+        event
+          .target
+          .classList
+          .add('bi-heart-fill')
+        event
+          .target
+          .classList
+          .remove('bi-heart')
+      } else {
+        event
+          .target
+          .classList
+          .add('bi-heart')
+        event
+          .target
+          .classList
+          .remove('bi-heart-fill')
+      }
+      const likeCount = document.querySelector('#like-count')
+      likeCount.innerText = response.data.likeCount
+    })
+  })
+</script>
 <script>
   const open_update = document.querySelector("#open_update")
   open_update.addEventListener("click", function () {
     const com_update = document.querySelector("#com_update")
     com_update.style.display = "";
   })
+
 </script>
 {% endblock content %}

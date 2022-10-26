@@ -1,4 +1,6 @@
+from django.http import JsonResponse
 from django.contrib import messages
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from articles.forms import ReviewForm, CommentForm
@@ -84,18 +86,20 @@ def update(request, pk):
         return render(request, "articles/update.html", context)
 
 
-def likes(request, article_pk):
+def likes(request, pk):
     if request.user.is_authenticated:
-        article = get_object_or_404(Review, pk=article_pk)
+        article = Review.objects.get(pk=pk)
 
         # 해당 게시글을 좋아요한 사람중에 pk가 현재 유저의 pk랑 같은 것이
         # 존재하는지 하지 않는지 판단
         if article.like_users.filter(pk=request.user.pk).exists():
             article.like_users.remove(request.user)
+            is_liked = False
         else:
             article.like_users.add(request.user)
-        return redirect("articles:index")
-    return redirect("accouts:login")
+            is_liked = True
+        context = {"isLiked": is_liked, "likeCount": article.like_users.count()}
+        return JsonResponse(context)
 
 
 def search(request):
