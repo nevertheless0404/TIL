@@ -116,7 +116,6 @@ def search(request):
 
 def comment_create(request, article_pk):
     article = Review.objects.get(pk=article_pk)
-
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():

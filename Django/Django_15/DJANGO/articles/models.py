@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from turtle import title
 from django.db import models
 from django.conf import settings
 from imagekit.models import ProcessedImageField
