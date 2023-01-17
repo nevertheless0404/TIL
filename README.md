@@ -57,26 +57,28 @@
 |                       | `2209016`            | ✏️ [JavaScript 정리](https://bit.ly/3xu9Cd7) |
 | **12주차**              | `220919`           | ✏️ [JavaScript 정리](https://bit.ly/3qLNh6T)    💡 [JavaScript 실습](https://bit.ly/3RVZDFk) |
 |              | `220920`           | ✏️ [JavaScript 정리](https://bit.ly/3SA1yz0)    💡 [JavaScript 실습](https://bit.ly/3Fco9yM) |
-|              | `220921`           | ✏️ [Django 정리](https://bit.ly/3DA5rQt) 
-|              | `220922`           |  💡 [Django 실습](https://bit.ly/3gvMxkt)   
-| **13주차**               | `220926`           | ✏️ [Django 정리](https://bit.ly/3Fa1bbi)         💡 [Django 실습](https://bit.ly/3gpksLx)
-|              | `220927`           |  💡 [Django 실습](https://bit.ly/3DqGVAX)  
-|              | `220928`           |  💡 [Django 실습](https://bit.ly/3D4rJrO)  
-|              | `220929`           |  💡 [Django 실습](https://bit.ly/3MWUJqd)  
-|              | `220930`           |  🔥 [Django 프로젝트](https://bit.ly/3FaBYh9)  
-| **14주차**               | `221004`           |  💡 [Django 실습](https://bit.ly/3U7hVo7) 
+|              | `220921`           | ✏️ [Django 정리](https://bit.ly/3DA5rQt) |
+|              | `220922`           |  💡 [Django 실습](https://bit.ly/3gvMxkt)   |
+| **13주차**               | `220926`           | ✏️ [Django 정리](https://bit.ly/3Fa1bbi)         💡 [Django 실습](https://bit.ly/3gpksLx)|
+|              | `220927`           |  💡 [Django 실습](https://bit.ly/3DqGVAX)  |
+|              | `220928`           |  💡 [Django 실습](https://bit.ly/3D4rJrO)  |
+|              | `220929`           |  💡 [Django 실습](https://bit.ly/3MWUJqd)  |
+|              | `220930`           |  🔥 [Django 프로젝트](https://bit.ly/3FaBYh9)  |
+| **14주차**               | `221004`           |  💡 [Django 실습](https://bit.ly/3U7hVo7) |
 |              | `2201005`           | ✏️ [Django 정리](https://bit.ly/3DA7EeJ)    💡 [Django 실습](https://bit.ly/3spN6iu) |
-|              | `221006`           |  💡 [Django 실습](https://bit.ly/3TtWb5D)  
-|              | `221007`           |  🔥 [Django 프로젝트](https://bit.ly/3gAaFT0)  
-| **15주차**               | `221011`           |  💡 [Django 실습](https://bit.ly/3sloebI) 
-|              | `221012`           |  💡 [Django 실습](https://bit.ly/3Sr7vy9)  
-|              | `221013`           |  💡 [Django 실습](https://bit.ly/3z8ffye)  
-|              | `221014`           |  🔥 [Django 프로젝트](https://bit.ly/3F8yrje) 
-| **16주차**               | `221017`           |  💡 [Django 실습](https://bit.ly/3FbJJTU)
-|              | `221018`           |  💡 [Django 실습](https://bit.ly/3TRclGg) 
-|              | `221019~20`           |  💡 [Django 실습](https://bit.ly/3D5pNzz)
-|              | `221021`           |  🔥 [Django 프로젝트](https://bit.ly/3z8HPj5) 
-| **17주차**               | `221024~25`           |  💡 [Django 실습](https://bit.ly/3D5pNzz)    *1019부터 같은 파일에 함*
+|              | `221006`           |  💡 [Django 실습](https://bit.ly/3TtWb5D)  |
+|              | `221007`           |  🔥 [Django 프로젝트](https://bit.ly/3gAaFT0)  |
+| **15주차**               | `221011`           |  💡 [Django 실습](https://bit.ly/3sloebI) |
+|              | `221012`           |  💡 [Django 실습](https://bit.ly/3Sr7vy9)  |
+|              | `221013`           |  💡 [Django 실습](https://bit.ly/3z8ffye)  |
+|              | `221014`           |  🔥 [Django 프로젝트](https://bit.ly/3F8yrje) |
+| **16주차**               | `221017`           |  💡 [Django 실습](https://bit.ly/3FbJJTU)|
+|              | `221018`           |  💡 [Django 실습](https://bit.ly/3TRclGg) |
+|              | `221019~20`           |  💡 [Django 실습](https://bit.ly/3D5pNzz)|
+|              | `221021`           |  🔥 [Django 프로젝트](https://bit.ly/3z8HPj5) |
+| **17주차**               | `221024~25`           |  💡 [Django 실습](https://bit.ly/3D5pNzz)    *1019부터 같은 파일에 함*|
+| **18주차 ~ ** | `221026~221216` | 🔥 프로젝트! |
+
 
 
 
